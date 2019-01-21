@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.min.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <!-- es5写法 -->
+        <ul>
+            <ol v-for="(item,key,index) in obj">
+                {{key}}:{{item}}------索引:{{index}}
+            </ol>
+        </ul>
+    </div>
+
+    <!-- es6写法 -->
+    <ul>
+        <ol v-for="(item,key,index) of obj">
+            {{key}}:{{item}}------索引:{{index}}
+        </ol>
+    </ul>
+
+    <ul>
+        <li v-for=""></li>
+    </ul>
+    </div>
+
+    <script>
+        new Vue({
+            el: ".app",
+            data: {
+                list: ['乔丹', "哈登","詹姆斯","科比","罗斯" ],
+                obj: {
+                    id: 1,
+                    name: '信神',
+                    des: '仅此我的男人',
+                    price: '300000000000'
+                },
+                str: '我好,就是了点'
+            }
+
+        })
+    </script>
+</body>
+
+</html>

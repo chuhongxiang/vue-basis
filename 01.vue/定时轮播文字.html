@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.min.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <h2>{{str}}</h2>
+
+        <button @click="btn">让文字跑起来</button>
+        <button @click="stop">定时器让文字跑起来</button>
+        <button @click="stopp">停止</button>
+    </div>
+
+    <script>
+        new Vue({
+            
+            el: '.app',
+            data: {
+                str:'我是碎碎碎,准备进阶哈哈哈哈',
+                timeId:''
+            },
+            methods: {
+                btn() {
+                    var one = this.str.substring(0, 1);
+                    var end = this.str.substring(1)
+
+                    this.str = end + one;
+                },
+                stop() {
+                    clearInterval(this.timeId)
+                    this.timeId=setInterval(() => {
+                        var one = this.str.substring(0, 1);
+                        var end = this.str.substring(1)
+
+                        this.str = end + one;
+                    }, 500)
+                },
+                stopp(){
+                    clearInterval(this.timeId)
+                    this.timeId=null;
+                }
+
+            }
+        })
+    </script>
+</body>
+
+</html>

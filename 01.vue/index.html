@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2 data-id="aaa">vue绑定自定义属性的方法</h2>
+        <button @click="dianwo">缩写绑定的方法 点我</button>
+    </div>
+
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                aaa:'自定义属性'
+            },
+            
+            methods:{
+                dianwo(){
+                    alert('你点我了')
+                }
+            }
+        })
+    </script>
+</body>
+</html>

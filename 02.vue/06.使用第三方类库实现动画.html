@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue.js"></script>
+    <link rel="stylesheet" href="./lib/animate.css">
+    <style>
+        body{
+            padding: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input type="button" @click="flag=!flag" value="点击">
+
+        <transition
+         enter-active-class="bounceIn" 
+        leave-active-class="bounceOut" 
+        :duration="{ enter: 200, leave: 400 }">
+            <h3 v-if="flag" class="animated hinge">假装好长好长的文字文字文字 动画还挺好看</h3>
+        </transition>
+    </div>
+
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                flag:false,
+                msg:'第三方类库实现动画'
+            },
+            methods:{
+
+            },
+            created() {
+                
+            },
+            mounted() {
+                
+            },
+        })
+    </script>
+</body>
+</html>

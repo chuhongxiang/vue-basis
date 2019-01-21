@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.min.js"></script>
+    <style>
+            .red{
+                color: red;
+            }
+            .color{
+                background-color: yellow;
+            }
+        </style>
+</head>
+
+<body>
+    <div class="app">
+        <p :class="['color']">1231</p>
+        <h2 :class="[flag?'red':'color']">我c位出丑</h2>
+
+        <button @click="daianwo">点我</button>
+    </div> 
+
+    <script>
+        new Vue({
+            el:".app",
+            data:{
+                flag:true,
+            },
+            methods:{
+                daianwo(){
+                    this.flag=!this.flag
+                }
+            }
+        })
+    </script>
+</body>
+</html>

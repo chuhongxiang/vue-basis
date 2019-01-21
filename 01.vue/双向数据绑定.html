@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>双向数据绑定</title>
+</head>
+<script src="vue.js"></script>
+<body>
+    <div id="app">
+        <input type="text" v-model="msg">
+        <button @click="submit">点我点我</button>
+        <ul>
+            <li v-for="(item,index) in list">{{item}}</li>
+        </ul>
+
+        <ul>
+            <li v-for="(item,index) ion list1">{{item.id}}</li>
+        </ul>
+    </div>
+
+
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                msg:'双向数据绑定',
+                list:['开放','詹姆斯','科比','老蔡'],
+                list1:[{
+                    id:1,
+                    name:"开放",
+                    age:6
+                }],
+                list2:{
+                    name:菜菜
+                }
+            },
+            methods:{
+                submit(){
+                    this.list.push(this.msg)
+                },
+                
+            }
+        })
+    </script>
+
+</body>
+
+</html>
