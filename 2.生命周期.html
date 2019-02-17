@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+
+    <script>
+        let vm=new Vue({
+            el:'#app',
+            data:{
+
+            },
+            methods:{
+                
+            },
+            beforeCreate() {
+                console.log("beforeCreate")
+            },
+            created() {
+                console.log("created")
+            },
+            beforeMount() {
+                console.log("beforeMount")
+            },
+            mounted() {
+                console.log("mounted")
+            },
+            //摧毁之前
+            beforeDestroy() {
+                console.log("摧毁之前")
+            },
+            destroyed() {
+                console.log("摧毁")
+            },
+            beforeUpdate() {
+                console.log("beforeUpdate")
+            },
+            updated() {
+                console.log("updated")
+            },
+        })
+
+        //函数执行时 就会触发beforeDestroy 和 destroyed 两个函数
+        vm.$destroy() 
+    </script>
+</body>
+</html>
